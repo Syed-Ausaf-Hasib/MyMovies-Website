@@ -1,0 +1,412 @@
+*{
+    margin: 0px;
+}
+html{
+    scroll-behavior: smooth;
+}
+html::-webkit-scrollbar{
+    width: 15px;
+}
+
+html::-webkit-scrollbar-track{
+    background: rgb(10, 0, 0);
+}
+html::-webkit-scrollbar-thumb{
+    background-image: linear-gradient(180deg, rgb(205, 205, 100), rgb(169, 101, 38));
+    border-radius: 20px;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar{
+    font-family: 'Sen', sans-serif;
+    width: 100%;
+    height: 70px;
+    background-color: rgb(10, 0, 0);
+}
+
+.navbar-container{
+    display: flex;
+    align-items: center;
+    padding: 0px 60px;
+    height: 100%;
+    color: white;
+}
+
+.logo-container{
+    flex: 1;
+}
+.logo{
+    font-size: 35px;
+    background-image: linear-gradient(135deg, rgb(205, 205, 100), rgb(169, 101, 38));
+    /* background-image: linear-gradient(135deg, purple, blue); */
+    background-clip: text;
+    color: transparent;
+    cursor: default;
+}
+.menu-container{
+    flex: 6;
+}
+.menu-list{
+    display: flex;
+    list-style: none;
+}
+.menu-list-item{
+    margin: 30px;
+}
+.menu-list-item.active{
+    font-weight: bold;
+}
+
+.profile-container{
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.Toggle{
+    background-image: linear-gradient(135deg, rgb(205, 205, 100), rgb(169, 101, 38));
+    width: 70px;
+    height: 30px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    position: relative;
+}
+.fa-solid.fa-cloud-moon{
+    color: black;
+}
+.fa-solid.fa-sun{
+    color: black;
+}
+.toggle-ball{
+    width: 35px;
+    height: 30px;
+    border-radius: 31px;
+    background-color: whitesmoke;
+    position: absolute;
+    right: -2;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.profile-text-container{
+    margin: 0 20px;
+    margin-left: 10px;
+    display: flex;
+}
+.fa-solid.fa-caret-down{
+    margin-left: 5px;
+}
+.PFP{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.sidebar{
+    width: 60px;
+    height: 100%;
+    /* background-image: linear-gradient(0deg, rgb(205, 205, 100), black); */
+    background-color: rgb(10, 0, 0);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 125px;
+    top: 0;
+}
+.left-menu-icon{
+    font-size:25px;
+    background-image: linear-gradient(135deg, rgb(205, 205, 100), rgb(169, 101, 38));
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 60px;
+    cursor: pointer;
+}
+.about, .home, .movies, .series, .popular, .trends{
+    cursor: pointer;
+}
+.container{
+    background-color: rgb(10, 0, 0);
+    min-height: calc(100vh - 70px);
+    color: white;
+    padding-bottom: 69px;
+}
+.content-container{
+    margin-left: 60px;
+}
+.featured-content1{
+    height: 50vh;
+    padding: 0px 50px;
+    box-shadow: 60px 0px 60px rgb(10, 0, 0) inset;
+    background: linear-gradient(to bottom, transparent, rgb(10,0,0)), url('img/interstellar\ new\ banner.jpg');
+}
+.featured-content2{
+    height: 50vh;
+    padding: 0px 50px;
+    box-shadow: 60px 0px 60px rgb(10, 0, 0) inset;
+    background: linear-gradient(to bottom, transparent, rgb(10,0,0)), url('img/dune\ banner.jpg');
+}
+.feature-logo{
+    width: 400px;
+}
+.feature-des{
+    width: 500px;
+    color: bisque;
+    margin: 30px 0px;
+}
+.feature-but{
+    background-image: linear-gradient(135deg, rgb(205, 205, 100), rgb(169, 101, 38));
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 15px;
+    font-family:'Sen', sans-serif;
+    cursor: pointer;
+}
+.list-item-img{
+    width: 290px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+}
+.movie-list-item:hover .list-item-img{
+    transform: scale(1.2);
+    margin: 0px 30px;
+    opacity: 0.1;
+}
+.movie-list-item:hover .list-item-tit,
+.movie-list-item:hover .list-item-des,
+.movie-list-item:hover .item-button{
+    opacity: 1;
+}
+
+
+.movie-list-wrapper{
+    padding: 0px 50px;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.movie-list-title{
+    padding-left: 20px;
+}
+.movie-list{
+    display: flex;
+    height: 220px;
+    align-items: center;
+    transform: translateX(0);
+    transition: all 0.5s ease-in-out;
+}
+.movie-list-item{
+    margin-right: 30px;
+    position: relative;
+}
+.list-item-tit{
+    padding: 0px 10px;
+    font-size: 30px;
+    max-height: 40px;
+    overflow: hidden;
+    font-weight: bold;
+    position: absolute;
+    color: white;
+    top: 10px;
+    left: 21px;
+    opacity: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.3s all ease-in-out;
+}
+.list-item-des{
+    padding: 10px;
+    width: 200px;
+    max-height: 52px;
+    overflow: hidden;
+    font-size: 13px;
+    position: absolute;
+    color: white;
+    top:35px;
+    left: 21px;
+    opacity: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.3s all ease-in-out;
+}
+.item-button{
+    padding: 10px 15px;
+    background-image: linear-gradient(135deg, rgb(205, 205, 100), rgb(169, 101, 38));
+    border: none;
+    border-radius: 17px;
+    position: absolute;
+    bottom: 1px;
+    left: 30px;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.3s all ease-in-out;
+}
+.arrsl{
+    font-size: 40px;
+    position: absolute;
+    top: 90px;
+    background-image: linear-gradient(135deg, rgb(205, 205, 100), rgb(169, 101, 38));
+    background-clip: text;
+    color: transparent;
+    right: 10;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.arrsl:hover{
+    scale: 1.5;
+}
+
+.movie-list-title{
+    background-image: linear-gradient(135deg, rgb(205, 205, 100), rgb(169, 101, 38));
+    width: 250px;
+    background-clip: text;
+    color: transparent;
+}
+h1{
+    cursor: default;
+}
+/* BODY FOR SECOND PAGE */
+.trailer{
+    margin-left: 60px;
+    max-width: 95%;
+}
+.about-title{
+    margin: 50px 70px;
+    width: auto;
+}
+.cast{
+    margin-left: 17%;
+    margin-bottom: 50px;
+}
+/* BODY END OF SECOND PAGE */
+/* FOOTER */
+.foot{
+    background-color: rgb(20, 0, 0);
+    margin-left: 60px;
+    padding-bottom: 150px;
+}
+.foot-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.name{
+    margin-top: 100px;
+    font-size: 50px;
+    background-image: linear-gradient(135deg, rgb(205, 205, 100), rgb(169, 101, 38));
+    background-clip: text;
+    color: transparent;
+}
+.para{
+    width: 550px;
+    margin-left: 170px;
+    background-image: linear-gradient(135deg, rgb(205, 205, 100), rgb(169, 101, 38));
+    background-clip: text;
+    color: transparent;
+    font-size: 15px;
+}
+.handles{
+    font-size: 25px;
+    margin-left: 50px;
+    background-image: linear-gradient(135deg, rgb(205, 205, 100), rgb(169, 101, 38));
+    background-clip: text;
+    color: transparent;
+}
+.foot-desc{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+.sociallogo{
+    font-size: 30px;
+    margin-left: 30px;
+}
+.fa-brands{
+    background-image: linear-gradient(135deg, rgb(205, 205, 100), rgb(169, 101, 38));
+    background-clip: text;
+    color: transparent;
+    margin-left: 15px;
+    cursor: pointer;
+}
+.copyright{
+    background-image: linear-gradient(135deg, rgb(205, 205, 100), rgb(169, 101, 38));
+    background-clip: text;
+    color: transparent;
+    font-size: 12px;
+    margin-left: 40.5%;
+    margin-top: 50px;
+}
+/* FOOTER END */
+
+                                                                    /* LIGHT MODE */
+/* BODY */
+.navbar-container.light{
+    background-color: rgb(228, 228, 228);
+    color: black;
+}
+.sidebar.light{
+    background-color: rgb(228, 228, 228);
+}
+.container.light{
+    background-color: rgb(228, 228, 228);
+}
+.list-item-tit.light, .list-item-des.light{
+    color: black;
+}
+.featured-content1.light, .featured-content2.light{
+    box-shadow: 40px 0px 60px rgb(228, 228, 228) inset;
+}
+.featured-content1.light{
+    background: linear-gradient(to bottom, transparent, rgb(228, 228, 228)), url('img/interstellar\ new\ banner.jpg');
+}
+.featured-content2.light{
+    background: linear-gradient(to bottom, transparent, rgb(228, 228, 228)), url('img/dune\ banner.jpg');
+}
+.feature-des.light{
+    color: black;
+}
+.toggle-ball.light{
+    background-color: black;
+    transform: translateX(-36px);
+}
+
+/* html::-webkit-scrollbar.light{
+    width: 15px;
+}
+html::-webkit-scrollbar-track.light{
+    background: rgb(228, 228, 228);
+}
+html::-webkit-scrollbar-thumb.light{
+    background-image: linear-gradient(180deg, rgb(139, 14, 223), rgb(93, 93, 249));
+} */
+
+/* BODY END */
+
+/* FOOTER */
+.foot.light{
+    background-color: rgb(200, 200, 200);
+}
+
+.copyright.light, .para.light ,.handles.light, .name.light, .fa-brands.light, .logo.light, .left-menu-icon.light, .movie-list-title.light, .feature-but.light, .Toggle.light, .item-button.light, .arrsl.light, .name.light, .para.light, .handles.light, .fa-brands.light{
+    background-image: linear-gradient(135deg, rgb(139, 14, 223), rgb(93, 93, 249));
+}
+.feature-but.light, .item-button.light, .fa-solid.fa-sun.light{
+    color: whitesmoke;
+}
+                                                                /*  END OF LIGHT MODE */
+
+@media only screen and (max-width: 1300px){
+    .menu-container{
+        display: none;
+    }
+}
